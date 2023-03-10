@@ -1,0 +1,12 @@
+<div class="card" style="width: 20rem;">
+    {% if instance.image %}
+    <a href="{{ instance.get_absolute_url }}"><img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title }} logo"></a>
+    {% endif %}
+    <div class="card-body">
+        <!-- when you have code like :<h4 class="card-title">{{ instance.description|truncatewords:12 }}</h4>, it make the no of words viewable 12 and end it with elipses -->
+        <h4 class="card-title">{{ instance.title }}</h4>
+        <p class="card-text">Some quick example text to build on the card title and make ...</p>
+        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">View</a>
+        <a href="{% url 'detail' slug=instance.slug %}" class="btn btn-warning">URL shortcut</a>
+    </div>
+</div>
